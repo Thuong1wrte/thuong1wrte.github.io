@@ -4,35 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ThươngBlog — Trang chủ</title>
-  <meta name="description" content="ThươngBlog — Trang chủ. Liên hệ: Facebook, YouTube, TikTok." />
-
-  <!-- Fonts (system stack for speed) -->
+  <meta name="description" content="ThươngBlog — Trang chủ. Liên hệ: Facebook, YouTube, TikTok, Email." />
   <style>
     :root{
-      --bg:#071021;            /* deep navy/black */
-      --accent:#0ea5d6;        /* cyan-blue accent */
-      --muted:#0b1220;         /* darker panel */
-      --card:#0f1724;          /* card background */
-      --glass: rgba(255,255,255,0.04);
-      --text:#e6f6ff;          /* pale text */
-      --sub:#9fbfcf;           /* muted text */
-      --accent-2:#0b8fb0;      /* secondary blue */
-      --success:#22c55e;
+      --bg:#041018;
+      --panel:#071826;
+      --accent:#0ea5d6;
+      --accent-2:#0b8fb0;
+      --muted:#9fbfcf;
+      --text:#e6f6ff;
+      --glass: rgba(255,255,255,0.03);
       --radius:12px;
-      --max-width:1100px;
+      --max-width:980px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, rgba(7,16,33,1) 0%, rgba(2,6,12,1) 100%);
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #000);
       color:var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-      padding:32px 16px;
+      padding:28px 16px;
       display:flex;
       justify-content:center;
     }
@@ -40,9 +34,9 @@
     .wrap{
       width:100%;
       max-width:var(--max-width);
-      background: linear-gradient(180deg, rgba(11,18,32,0.6), rgba(6,10,18,0.6));
-      border-radius:16px;
-      box-shadow: 0 10px 30px rgba(2,6,12,0.6);
+      background: linear-gradient(180deg, rgba(7,24,36,0.6), rgba(3,8,15,0.6));
+      border-radius:14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
       overflow:hidden;
       border:1px solid rgba(255,255,255,0.03);
     }
@@ -51,292 +45,174 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
-      padding:22px 28px;
-      background: linear-gradient(90deg, rgba(3,8,15,0.6), rgba(6,12,20,0.4));
+      padding:20px 24px;
+      gap:12px;
+      background:linear-gradient(90deg, rgba(2,8,14,0.5), rgba(6,12,20,0.3));
       border-bottom:1px solid rgba(255,255,255,0.02);
       backdrop-filter: blur(6px);
     }
 
-    .brand{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      text-decoration:none;
-      color:var(--text);
-    }
-
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text)}
     .logo{
-      width:56px;
-      height:56px;
-      border-radius:10px;
+      width:52px;height:52px;border-radius:10px;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:#02121a;
-      box-shadow: 0 6px 18px rgba(14,165,214,0.12), inset 0 -6px 18px rgba(255,255,255,0.03);
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#02121a;
+      box-shadow: 0 6px 18px rgba(14,165,214,0.08);
       flex-shrink:0;
     }
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
 
-    .brand h1{
-      margin:0;
-      font-size:18px;
-      letter-spacing:0.2px;
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{
+      color:var(--text);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:14px;
+      transition:all .14s ease;
     }
-    .brand p{margin:0;font-size:12px;color:var(--sub)}
+    nav a:hover{background:var(--glass);transform:translateY(-2px)}
 
-    nav.desktop{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
-    nav.desktop a{
-      color:var(--text);
-      text-decoration:none;
-      padding:8px 12px;
-      border-radius:8px;
-      font-size:14px;
-      transition:all .18s ease;
-    }
-    nav.desktop a:hover{background:var(--glass); transform:translateY(-2px)}
-
+    main{padding:28px}
     .hero{
       display:grid;
-      grid-template-columns:1fr 360px;
-      gap:28px;
-      padding:36px;
-      align-items:start;
-    }
-
-    .hero-left{
+      grid-template-columns:1fr 320px;
+      gap:24px;
       padding:18px;
+    }
+
+    .panel{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.02);
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);
     }
 
-    .eyebrow{
-      display:inline-block;
-      background:rgba(14,165,214,0.08);
-      color:var(--accent);
-      padding:6px 10px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:12px;
-      margin-bottom:12px;
+    .intro .eyebrow{
+      display:inline-block;background:rgba(14,165,214,0.06);color:var(--accent);
+      padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;margin-bottom:12px;
     }
+    .intro h2{margin:8px 0 12px 0;font-size:26px}
+    .intro p{margin:0;color:var(--muted);font-size:15px}
 
-    h2.title{
-      margin:6px 0 12px 0;
-      font-size:28px;
-      line-height:1.05;
-      color:var(--text);
-    }
-
-    p.lead{
-      margin:0 0 18px 0;
-      color:var(--sub);
-      font-size:15px;
-    }
-
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
+    .actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:10px;
-      text-decoration:none;
-      color:var(--bg);
-      background:var(--accent);
-      font-weight:600;
-      box-shadow: 0 8px 20px rgba(14,165,214,0.12);
-      transition:transform .12s ease, box-shadow .12s ease;
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
+      text-decoration:none;color:var(--bg);background:var(--accent);font-weight:700;
+      box-shadow: 0 8px 20px rgba(14,165,214,0.08);
     }
-    .btn.secondary{
-      background:transparent;
-      color:var(--text);
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow:none;
-    }
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04);box-shadow:none}
     .btn:hover{transform:translateY(-3px)}
-
-    /* right column card */
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:12px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.02);
-    }
 
     .social-list{display:flex;flex-direction:column;gap:12px}
     .social-item{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:10px;
-      border-radius:10px;
+      display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;
       background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
-      text-decoration:none;
-      color:var(--text);
-      border:1px solid rgba(255,255,255,0.02);
+      text-decoration:none;color:var(--text);border:1px solid rgba(255,255,255,0.02);
     }
-    .social-item svg{width:28px;height:28px;flex-shrink:0}
+    .social-item svg{width:34px;height:34px;flex-shrink:0}
     .social-item .meta{display:flex;flex-direction:column}
-    .social-item .meta .name{font-weight:700}
-    .social-item .meta .desc{font-size:13px;color:var(--sub)}
+    .social-item .meta .name{font-weight:800}
+    .social-item .meta .desc{font-size:13px;color:var(--muted)}
 
-    /* footer */
-    footer.sitefoot{
-      padding:18px 28px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      border-top:1px solid rgba(255,255,255,0.02);
-      background:linear-gradient(180deg, rgba(3,8,15,0.2), rgba(6,12,20,0.2));
+    footer{
+      padding:16px 24px;display:flex;justify-content:space-between;align-items:center;
+      gap:12px;border-top:1px solid rgba(255,255,255,0.02);background:linear-gradient(180deg, rgba(3,8,15,0.08), transparent);
     }
-    .copyright{color:var(--sub);font-size:13px}
+    .copyright{color:var(--muted);font-size:13px}
 
-    /* responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr; padding:20px}
-      .hero-left{order:1}
-      .card{order:2}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; padding:12px}
     }
-
-    /* small helper */
-    .muted{color:var(--sub)}
-    .center{display:flex;align-items:center;justify-content:center}
   </style>
 </head>
 <body>
   <div class="wrap" role="document" aria-label="ThươngBlog">
     <header>
-      <a class="brand" href="https://thuong1wrte.github.io" aria-label="Trở về trang chủ">
+      <a class="brand" href="#home" aria-label="Trở về trang chủ">
         <div class="logo" aria-hidden="true">T</div>
         <div>
           <h1>ThươngBlog</h1>
-          <p class="muted">thuong1wrte.github.io</p>
+          <p>thuong1wrte.github.io</p>
         </div>
       </a>
 
-      <nav class="desktop" aria-label="Chính">
+      <nav aria-label="Chính">
         <a href="#home">Trang chủ</a>
         <a href="#contact">Liên hệ</a>
-        <a href="https://www.facebook.com/profile.php?id=100026457639858" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://youtube.com/channel/UCvrqNfi8ARTxT5r6HOynQSA" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/thuong1wrte" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@thuong1wrte298" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@thuongnguyen4645" target="_blank" rel="noopener">TikTok</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="home" aria-labelledby="home-title">
-        <div class="hero-left" role="region" aria-label="Giới thiệu">
+        <div class="panel intro" role="region" aria-label="Giới thiệu">
           <span class="eyebrow">Blog cá nhân</span>
-          <h2 id="home-title" class="title">Chào mừng đến với ThươngBlog</h2>
-          <p class="lead">Nơi chia sẻ suy nghĩ, video và liên kết đến các kênh xã hội. Giao diện tối, phong cách xanh‑đen, tối ưu cho đọc ban đêm.</p>
+          <h2 id="home-title">Chào mừng đến với ThươngBlog</h2>
+          <p>ThươngBlog là nơi tôi ghi lại suy nghĩ ngắn, chia sẻ video và cập nhật liên kết đến các kênh xã hội. Mục tiêu là giữ mọi thứ trực tiếp, dễ truy cập và thân thiện với thiết bị di động.</p>
+
+          <p style="margin-top:12px;color:var(--muted);font-size:14px">
+            Ở đây bạn sẽ tìm thấy liên kết đến Facebook, YouTube và TikTok của tôi, cùng cách liên hệ nhanh qua email.
+          </p>
 
           <div class="actions" role="group" aria-label="Hành động chính">
             <a class="btn" href="#contact">Liên hệ</a>
-            <a class="btn secondary" href="https://thuong1wrte.github.io/myvideo.html" target="_blank" rel="noopener">Xem video</a>
-            <a class="btn secondary" href="https://thuong1wrte.github.io/xemtatca.html" target="_blank" rel="noopener">Xem tất cả</a>
-          </div>
-
-          <div style="margin-top:18px; color:var(--sub); font-size:13px;">
-            <strong>Ghi chú:</strong> Trang chủ giữ nội dung tối giản theo yêu cầu — không có bài viết. Bạn có thể thêm bài viết sau bằng cách tạo trang con hoặc tích hợp CMS.
+            <a class="btn secondary" href="https://www.facebook.com/thuong1wrte" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn secondary" href="https://www.youtube.com/@thuong1wrte298" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn secondary" href="https://www.tiktok.com/@thuongnguyen4645" target="_blank" rel="noopener">TikTok</a>
           </div>
         </div>
 
-        <aside class="card" role="complementary" aria-label="Kết nối nhanh">
+        <aside class="panel" role="complementary" aria-label="Kết nối nhanh">
           <h3 style="margin:0 0 12px 0">Kết nối nhanh</h3>
 
           <div class="social-list" role="list">
-            <a class="social-item" href="https://www.facebook.com/profile.php?id=100026457639858" target="_blank" rel="noopener" role="listitem" aria-label="Facebook">
-              <!-- Facebook SVG -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect width="24" height="24" rx="4" fill="#1877F2"></rect>
-                <path d="M15.5 8.5h-1.5c-.4 0-.9.2-.9.9v1.1h2.4l-.3 2.3h-2.1V19h-2.5v-6.2H9.6v-2.3h1.3V9.6c0-1.3.8-3.1 3.1-3.1h1.5v2z" fill="#fff"/>
-              </svg>
-              <div class="meta">
-                <span class="name">Facebook</span>
-                <span class="desc">Kết nối với tôi trên Facebook</span>
-              </div>
+            <a class="social-item" href="https://www.facebook.com/thuong1wrte" target="_blank" rel="noopener" role="listitem" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#1877F2"></rect><path d="M15.5 8.5h-1.5c-.4 0-.9.2-.9.9v1.1h2.4l-.3 2.3h-2.1V19h-2.5v-6.2H9.6v-2.3h1.3V9.6c0-1.3.8-3.1 3.1-3.1h1.5v2z" fill="#fff"/></svg>
+              <div class="meta"><span class="name">Facebook</span><span class="desc">facebook.com/thuong1wrte</span></div>
             </a>
 
-            <a class="social-item" href="https://youtube.com/channel/UCvrqNfi8ARTxT5r6HOynQSA" target="_blank" rel="noopener" role="listitem" aria-label="YouTube">
-              <!-- YouTube SVG -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect width="24" height="24" rx="4" fill="#FF0000"></rect>
-                <path d="M9.5 8.5l6 3.5-6 3.5v-7z" fill="#fff"/>
-              </svg>
-              <div class="meta">
-                <span class="name">YouTube</span>
-                <span class="desc">Kênh video của tôi</span>
-              </div>
+            <a class="social-item" href="https://www.youtube.com/@thuong1wrte298" target="_blank" rel="noopener" role="listitem" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#FF0000"></rect><path d="M9.5 8.5l6 3.5-6 3.5v-7z" fill="#fff"/></svg>
+              <div class="meta"><span class="name">YouTube</span><span class="desc">youtube.com/@thuong1wrte298</span></div>
             </a>
 
-            <a class="social-item" href="https://www.tiktok.com" target="_blank" rel="noopener" role="listitem" aria-label="TikTok">
-              <!-- TikTok-like SVG (generic) -->
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect width="24" height="24" rx="4" fill="#000"></rect>
-                <g transform="translate(4,3)">
-                  <path d="M10 1.2v6.1c0 1.9-1.6 3.5-3.5 3.5S3 9.2 3 7.3 4.6 3.8 6.5 3.8c.2 0 .4 0 .6.03V1.2h2.9z" fill="#00F2EA"/>
-                  <path d="M12 1.2v3.2c.9.5 1.6 1.4 1.6 2.5 0 1.9-1.6 3.5-3.5 3.5S7.6 8.8 7.6 6.9V6.1" fill="#FF0050"/>
-                </g>
-              </svg>
-              <div class="meta">
-                <span class="name">TikTok</span>
-                <span class="desc">Theo dõi nội dung ngắn</span>
-              </div>
+            <a class="social-item" href="https://www.tiktok.com/@thuongnguyen4645" target="_blank" rel="noopener" role="listitem" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#000"></rect><g transform="translate(4,3)"><path d="M10 1.2v6.1c0 1.9-1.6 3.5-3.5 3.5S3 9.2 3 7.3 4.6 3.8 6.5 3.8c.2 0 .4 0 .6.03V1.2h2.9z" fill="#00F2EA"/><path d="M12 1.2v3.2c.9.5 1.6 1.4 1.6 2.5 0 1.9-1.6 3.5-3.5 3.5S7.6 8.8 7.6 6.9V6.1" fill="#FF0050"/></g></svg>
+              <div class="meta"><span class="name">TikTok</span><span class="desc">tiktok.com/@thuongnguyen4645</span></div>
             </a>
           </div>
 
-          <div style="margin-top:14px; font-size:13px; color:var(--sub)">
+          <div style="margin-top:14px;font-size:13px;color:var(--muted)">
             <strong>Liên hệ nhanh:</strong>
             <div style="margin-top:8px">
-              <a href="mailto:example@domain.com" style="color:var(--accent); text-decoration:none">example@domain.com</a>
+              <a href="mailto:thuong2072009@gmail.com" style="color:var(--accent);text-decoration:none">thuong2072009@gmail.com</a>
             </div>
           </div>
         </aside>
       </section>
     </main>
 
-    <footer class="sitefoot" id="contact" role="contentinfo" aria-label="Chân trang và liên hệ">
-      <div>
-        <div style="font-weight:700">ThươngBlog</div>
-        <div class="muted" style="font-size:13px">Nguyễn Hoài Thương</div>
-      </div>
+    <footer id="contact" role="contentinfo" aria-label="Chân trang và liên hệ">
+      <div style="padding:12px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <div style="font-weight:800">ThươngBlog</div>
+          <div style="color:var(--muted);font-size:13px">Nguyễn Hoài Thương</div>
+        </div>
 
-      <div style="display:flex;gap:12px;align-items:center">
-        <div class="copyright">&copy; <span id="year"></span> ThươngBlog</div>
-        <a class="btn secondary" href="https://www.facebook.com/profile.php?id=100026457639858" target="_blank" rel="noopener">Facebook</a>
-        <a class="btn secondary" href="https://youtube.com/channel/UCvrqNfi8ARTxT5r6HOynQSA" target="_blank" rel="noopener">YouTube</a>
-        <a class="btn secondary" href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+        <div style="display:flex;gap:10px;align-items:center">
+          <div class="copyright">&copy; <span id="year"></span> ThươngBlog</div>
+          <a class="btn secondary" href="https://www.facebook.com/thuong1wrte" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn secondary" href="https://www.youtube.com/@thuong1wrte298" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn secondary" href="https://www.tiktok.com/@thuongnguyen4645" target="_blank" rel="noopener">TikTok</a>
+        </div>
       </div>
     </footer>
   </div>
 
   <script>
-    // small JS: set year and smooth scroll for internal links
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // smooth scroll for same-page anchors
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const href = a.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          const el = document.querySelector(href);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        }
+        if(href.length>1){ e.preventDefault(); const el = document.querySelector(href); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); }
       });
     });
   </script>
